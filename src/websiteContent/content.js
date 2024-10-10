@@ -148,72 +148,86 @@ export const content = {
   },
   timeLineContent: [
     {
+      id: 1,
       year: "1947",
       heading: "Establishment",
       desc: "Incepted in 1947, Speed Motors is one of the oldest dealers of automobiles in Uttar Pradesh. A renowned dealer of a premium range of Luxury automotive brands.",
     },
     {
+      id: 2,
       year: "1950",
       heading: "General Motors India Private Limited and Austin & Morris Cars",
       desc: "Started the dealership business with General Motors and Austin & Morris when introduced in Indian Market.",
     },
     {
+      id: 3,
       year: "1960",
       heading: "Hindustan Motors",
       desc: "Hindustan Motors, one of the longest-run Indian automotive manufacturers shared a beneficial partnership with Speed as their dealers from 1960 - 2014.",
     },
     {
+      id: 4,
       year: "1970",
       heading: "Mahindra Automotive",
       desc: "Mahindra & Mahindra Limited is an Indian multinational automotive manufacturing corporation and we had been their proud dealers in Gorakhpur from 1970 - 1989.",
     },
     {
+      id: 5,
       year: "1984",
       heading: "TVS Motor",
       desc: "An Indian multinational motorcycle manufacturer and we are the current dealers for TVS Motor Company in Lucknow (since 1984).",
     },
     {
+      id: 6,
       year: "1999",
       heading: "Mitsubishi Motors",
       desc: "Dealers for Mitsubishi Motors In Lucknow and Kanpur from 1999 - 2005, a Japanese multinational automobile manufacturer.",
     },
     {
+      id: 7,
       year: "2012",
       heading: "BMW Cars",
       desc: "Current dealership owner for BMW, a german multinational manufacturer of performance luxury vehicles established in Lucknow and Kanpur.",
     },
     {
+      id: 8,
       year: "2015",
       heading: "Isuzu Motors",
       desc: "Dealership for Isuzu established in Lucknow.",
     },
     {
+      id: 9,
       year: "2015",
       heading: "JUICE SALON & ACADEMY",
       desc: "Juice, one of India's trendiest salon chains has more than 30 salons across India and Dubai catering to the beauty needs of ardent fashion followers, trendsetters, and celebrities.",
     },
     {
+      id: 10,
       year: "2017",
       heading: "Isuzu Motors",
       desc: "Our trusted partnership extended with Isuzu which led to another dealership establishment in Kanpur.",
     },
 
     {
+      id: 11,
       year: "2017",
       heading: "Volvo Cars",
       desc: "Current dealers for Volvo, a Swedish multinational manufacturer of luxury vehicles established in Lucknow.",
     },
     {
+      id: 12,
       year: "2019",
       heading: "BMW Motorrad",
       desc: "BMW Motorrad is the motorcycle brand of BMW, producing motorcycles since 1923 with record sales for the fifth year in succession in 2015. We are their current dealers of BMW Motorrad established in Lucknow.",
     },
     {
+      id: 13,
       year: "2021",
       heading: "Skoda Auto",
       desc: "Current dealers for Škoda Auto India Pvt Ltd., a subsidiary of Škoda Auto, a Czech automobile manufacturer which has been operating in India since November 2001. In 2021, the dealership was established in Prayagraj.",
     },
     {
+      id: 14,
       year: "2022",
       heading: "BYD AUTO",
       desc: "A new venture began with BYD Auto, the automotive subsidiary of the publicly-listed Chinese multinational manufacturer BYD Company in 2022.",

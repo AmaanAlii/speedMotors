@@ -16,7 +16,7 @@ function OurDirectorsSection() {
       <h3 className=" font-bold text-2xl">
         Our&nbsp;<span className=" text-[#019ADA]">Directors</span>
       </h3>
-      <div className=" flex justify-center items-center gap-5 flex-wrap">
+      <div className="w-full flex justify-center md:justify-between items-center gap-5 flex-wrap">
         {directImages.map((director, index) => (
           <div key={index} className=" relative w-fit group">
             <div

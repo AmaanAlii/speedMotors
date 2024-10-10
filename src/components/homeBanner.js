@@ -47,7 +47,7 @@ function HomeBanner() {
     <section
       ref={homeBannerRef}
       style={{ backgroundImage: `url(${HomeBannerBgImg})` }}
-      className=" bg-no-repeat bg-bottom bg-cover w-full h-auto
+      className=" bg-no-repeat bg-bottom bg-cover w-full h-auto md:h-[600px]
       flex flex-col justify-start items-center gap-5 px-10"
     >
       <div className=" flex flex-col justify-center items-center gap-5 mt-16 mb-14">
