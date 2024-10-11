@@ -69,24 +69,26 @@ function BrandsSection() {
           Brands With Speed
         </span>
       </div>
-      <div className=" w-[90%] flex justify-between items-center flex-wrap gap-5">
+      <div className=" w-[90%] flex justify-between items-center flex-wrap gap-5 gap-y-6">
         {brandLogos.map((img, index) => (
-          <img
-            onClick={() => handleImageClick(index)}
-            className={`max-w-[100px] cursor-pointer ${
-              index === currentIndex
-                ? " border-2 border-gray-600 p-2 rounded-lg"
-                : ""
-            }`}
-            key={index}
-            src={img}
-            alt="Brand"
-          />
+          <div className=" h-[100px] w-[80px]  flex justify-center items-center">
+            <img
+              onClick={() => handleImageClick(index)}
+              className={` max-w-[100px] box-border cursor-pointer ${
+                index === currentIndex
+                  ? " border-2 border-gray-600 p-2 rounded-lg"
+                  : ""
+              }`}
+              key={index}
+              src={img}
+              alt="Brand"
+            />
+          </div>
         ))}
       </div>
 
       <img
-        className=" w-[300px] md:w-[80%]"
+        className=" w-full md:w-[80%]"
         src={BrandExampleImgs[currentIndex]}
       />
     </div>

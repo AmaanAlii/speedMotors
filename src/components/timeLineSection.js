@@ -55,7 +55,7 @@ function TimeLineSection() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleGoToNextEvent();
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(intervalId);
   }, [currentEventId, timeLineData]);
@@ -73,7 +73,7 @@ function TimeLineSection() {
       <div
         style={{ backgroundImage: `url(${TimeLineBgImg})` }}
         className=" bg-contain bg-center bg-no-repeat w-full md:min-h-[80vh]
-         flex flex-col justify-center items-center gap-5"
+        hidden lg:flex flex-col justify-center items-center gap-5"
       >
         <div className=" w-[100%] flex justify-between items-center gap-5 text-white min-h-[150px]">
           <button
@@ -125,6 +125,24 @@ function TimeLineSection() {
           </p>
         </div>
         <img className=" md:w-[600px]" src={HomeTimeLineBottomImg} alt="Cars" />
+      </div>
+      <div className=" w-full lg:hidden flex flex-col justify-normal items-start gap-16 pl-2 pt-2 mt-5  border-l-2 border-l-sky-500">
+        {timeLineData?.map((event, index) => (
+          <div key={event.id} className=" w-full relative  ">
+            <div className=" absolute -top-8 -left-[80px] w-[200px] h-[25px] flex justify-center items-center rounded-full bg-sky-500 z-10">
+              <h5 className=" text-sm font-bold text-white">{event.year}</h5>
+            </div>
+            <div className=" w-full flex flex-col justify-start items-start gap-2">
+              {/* <h5 className=" text-sm font-bold text-white px-2 py-1 rounded-md bg-sky-500">
+                {event.year}
+              </h5> */}
+              <h4 className=" text-gray-700 text-xl font-bold">
+                {event.heading}
+              </h4>
+              <p className=" text-gray-500">{event.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

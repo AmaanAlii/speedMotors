@@ -6,8 +6,10 @@ import { internalLinks } from "./internalLinks";
 import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import FooterSection from "./components/footerSection";
+import { useRef } from "react";
 
 function App() {
+  const galleryRef = useRef(null);
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -25,9 +27,12 @@ function App() {
         </a>
       </header> */}
       <Router>
-        <Navbar />
+        <Navbar galleryRef={galleryRef} />
         <Routes>
-          <Route path={internalLinks.home} element={<Home />} />
+          <Route
+            path={internalLinks.home}
+            element={<Home galleryRef={galleryRef} />}
+          />
         </Routes>
         <FooterSection />
       </Router>

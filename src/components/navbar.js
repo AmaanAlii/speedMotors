@@ -24,7 +24,7 @@ import GalleryImg6 from "../assets/gallery/GalleryImg6.png";
 import GalleryImg7 from "../assets/gallery/GalleryImg7.png";
 import GalleryImg8 from "../assets/gallery/GalleryImg8.png";
 
-function Navbar() {
+function Navbar({ galleryRef }) {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [firstRender, setFirstRender] = useState(false);
 
@@ -63,12 +63,9 @@ function Navbar() {
     if (firstRender === false) {
       setFirstRender(true);
     }
-    setSideMenuOpen((prev) => {
-      const newState = !prev;
-      toggleIconAnimation(burgerIconRef, closeIconRef, sideMenuOpen);
-      toggleSideMenuAnimation(sideMenuRef, sideMenuOpen);
-      return newState;
-    });
+    setSideMenuOpen(!sideMenuOpen);
+    toggleIconAnimation(burgerIconRef, closeIconRef, sideMenuOpen);
+    toggleSideMenuAnimation(sideMenuRef, sideMenuOpen);
   });
 
   const galleryImages = [
@@ -82,10 +79,31 @@ function Navbar() {
     GalleryImg8,
   ];
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (sideMenuOpen) {
+      body.style.overflow = "hidden";
+      body.addEventListener("click", handleOutsideClick);
+    } else {
+      body.style.overflow = "auto";
+      body.removeEventListener("click", handleOutsideClick);
+    }
+  }, [sideMenuOpen]);
+
+  const handleOutsideClick = (event) => {
+    if (!event.target.closest(".side-menu")) {
+      handleSideMenuClick();
+    }
+  };
+
+  const handleGalleryViewClick = () => {
+    galleryRef.current.scrollIntoView({ behavior: "smooth" });
+    handleSideMenuClick();
+  };
   return (
     <nav
       ref={navRef}
-      className=" relative z-20 w-full h-[60px] shadow-md px-10 flex justify-between items-center"
+      className=" side-menu fixed bg-white top-0 z-20 w-full h-[60px] shadow-md px-10 flex justify-between items-center"
     >
       <img className=" w-[120px]" src={MainLogoImg} alt="Logo" />
       <div className=" flex justify-center items-center gap-5">
@@ -109,7 +127,7 @@ function Navbar() {
       {firstRender && (
         <div
           ref={sideMenuRef}
-          className={` absolute z-10 top-[60px] right-0  w-[400px] h-auto rounded-md bg-gray-50 
+          className={` absolute z-10 top-[60px] right-0 w-[280px] md:w-[400px] h-auto rounded-md bg-gray-50 
        flex flex-col items-start gap-5 p-10 shadow-md
       `}
         >
@@ -119,15 +137,21 @@ function Navbar() {
           </div>
           <div className=" w-full flex flex-col justify-start items-start gap-2">
             <span>Contact Us</span>
-            <div className=" w-full flex justify-between items-center gap-5">
+            <div className=" w-full flex flex-wrap justify-between items-center gap-5">
               <span>{companyDetails.companyPhone}</span>
               <span>{companyDetails.companyEmail}</span>
             </div>
           </div>
           <div className=" w-full  flex flex-col justify-start items-start gap-2">
-            <div className=" w-full flex justify-between items-center gap-5">
+            <div className=" w-full flex flex-wrap justify-between items-center gap-5">
               <span>Gallery</span>
-              <button>View All</button>
+              <button
+                onClick={handleGalleryViewClick}
+                className=" text-white font-semibold px-2 py-1 
+              bg-sky-500 rounded-md cursor-pointer"
+              >
+                View All
+              </button>
             </div>
             <div className=" w-full flex flex-wrap gap-2">
               {galleryImages.map((img, index) => (
@@ -135,7 +159,7 @@ function Navbar() {
                   key={index}
                   src={img}
                   alt="Gallery"
-                  className=" w-[100px]"
+                  className=" w-[50px] md:w-[100px]"
                 />
               ))}
             </div>

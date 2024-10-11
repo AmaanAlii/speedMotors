@@ -21,7 +21,7 @@ function BrandDetailsCard({
         className=" w-full md:w-[20%] flex flex-col justify-center items-center 
       md:justify-start md:items-start gap-5"
       >
-        <img className=" w-[100%]" src={logoImg} alt="Logo" />
+        <img className=" w-[200px] md:w-[100%]" src={logoImg} alt="Logo" />
         <div className=" w-[100%] flex flex-wrap md:flex-nowrap md:justify-between md:items-center gap-5">
           {imagesShowroom?.map((img, index) => (
             <img

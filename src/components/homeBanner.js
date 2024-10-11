@@ -43,6 +43,13 @@ function HomeBanner() {
     animateBanner();
   }, []);
 
+  const handleExploreButtonClick = () => {
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       ref={homeBannerRef}
@@ -51,11 +58,11 @@ function HomeBanner() {
       flex flex-col justify-start items-center gap-5 px-10"
     >
       <div className=" flex flex-col justify-center items-center gap-5 mt-16 mb-14">
-        <h2 className=" text-3xl font-bold">
+        <h2 className=" text-xl md:text-3xl font-bold">
           PROVIDING AN EXCEPTIONAL <br />{" "}
           <span className=" text-[#009ADA]">DEALERSHIP EXPERIENCE</span>
         </h2>
-        <h3 className=" text-2xl">
+        <h3 className=" md:text-2xl">
           PROVIDING AN EXCEPTIONAL DEALERSHIP EXPERIENCE
         </h3>
       </div>
@@ -64,7 +71,10 @@ function HomeBanner() {
           <img className=" max-w-[100px]" key={index} src={img} alt="Brand" />
         ))}
       </div>
-      <button className=" mt-10 px-4 py-1 border-2 text-[#009ADA] border-[#009ADA] rounded-lg">
+      <button
+        onClick={handleExploreButtonClick}
+        className=" mt-10 px-4 py-1 border-2 text-[#009ADA] border-[#009ADA] rounded-lg"
+      >
         Explore Now
       </button>
     </section>

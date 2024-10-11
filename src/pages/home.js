@@ -12,7 +12,7 @@ import OurDirectorsSection from "../components/ourDirectorsSection";
 import TestimonialsSection from "../components/testimonialsSection";
 import TimeLineSection from "../components/timeLineSection";
 
-function Home() {
+function Home({ galleryRef }) {
   return (
     <div className=" flex flex-col justify-center items-center gap-10 my-10">
       <HomeBanner />
@@ -24,7 +24,7 @@ function Home() {
       <BrandsSection />
       <BrandsWeWorkWith />
       <AwardsSection />
-      <GallerySection />
+      <GallerySection galleryRef={galleryRef} />
       <TestimonialsSection />
       <ContactSection />
     </div>

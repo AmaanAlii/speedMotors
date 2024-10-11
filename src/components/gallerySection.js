@@ -9,7 +9,7 @@ import GalleryImg6 from "../assets/home/GalleryImg6.png";
 import GalleryImg7 from "../assets/home/GalleryImg7.png";
 import GalleryImg8 from "../assets/home/GalleryImg8.png";
 
-function GallerySection() {
+function GallerySection({ galleryRef }) {
   const galleryImages = [
     GalleryImg1,
     GalleryImg2,
@@ -22,6 +22,7 @@ function GallerySection() {
   ];
   return (
     <div
+      ref={galleryRef}
       style={{ backgroundImage: `url(${GalleryBgImg})` }}
       className=" w-full flex justify-center items-center p-10 bg-cover bg-no-repeat bg-center"
     >
@@ -29,9 +30,14 @@ function GallerySection() {
         <h3 className=" text-4xl text-gray-700 font-bold">
           Gall<span className=" text-[#009ADA]">ery</span>
         </h3>
-        <div className=" w-[100%] flex justify-start items-start gap-5 flex-wrap">
+        <div className=" w-[100%] flex justify-center md:justify-start items-start gap-5 flex-wrap">
           {galleryImages.map((img, index) => (
-            <img className="w-[250px]" key={index} src={img} alt="Gallery" />
+            <img
+              className=" w-full md:w-[250px]"
+              key={index}
+              src={img}
+              alt="Gallery"
+            />
           ))}
         </div>
       </div>

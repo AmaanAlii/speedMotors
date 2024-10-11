@@ -4,7 +4,7 @@ function FooterSection() {
   return (
     <footer
       style={{ backgroundImage: `url(${FooterBgImg})` }}
-      className=" w-full h-auto md:h-[300px] flex flex-col 
+      className=" w-full h-auto py-10 md:py-0 md:h-[300px] flex flex-col 
       justify-center items-center 
     gap-5 bg-center bg-cover bg-no-repeat text-white"
     >
