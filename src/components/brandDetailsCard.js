@@ -42,13 +42,13 @@ function BrandDetailsCard({
           </span>
           <div className=" w-[100%] flex justify-between items-center gap-5 flex-wrap ">
             <h4
-              className=" hover:text-blue-500 cursor-pointer"
+              className=" text-sky-500 hover:text-sky-6 00 cursor-pointer"
               onClick={handleCall}
             >
               {contactNo}
             </h4>
             <button
-              className=" px-2 py-1 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold rounded-lg"
+              className=" px-2 py-1 border-2 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white font-semibold rounded-lg"
               onClick={handleViewMap}
             >
               View On Map

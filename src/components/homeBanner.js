@@ -17,7 +17,7 @@ import { useEffect, useRef } from "react";
 
 function HomeBanner() {
   const brandLogos = [
-    BrandLogoImg1,
+    // BrandLogoImg1,
     BrandLogoImg2,
     BrandLogoImg3,
     BrandLogoImg4,

@@ -57,7 +57,7 @@ export const content = {
       logoImg: BrandTvsLogo,
       imagesShowroom: [BrandTvsShowroomImg1, BrandTvsShowroomImg2],
       desc: "TVS Motor Company is an Indian global motorcycle producer headquartered in Chennai, Tamil Nadu, India. It is the third biggest bike organization in India with an income of over ₹20,000 crores in 2018-19. Speed dealership with TVS Motor Company in Lucknow (since 1984).",
-      contact: "+996 (4343) 4325665",
+      contact: "9580149076",
       mapLink: "https://maps.app.goo.gl/n9HgQD8LftrvmPY69",
     },
     {
@@ -68,7 +68,7 @@ export const content = {
         BrandMotorwagenShowroomImg2,
       ],
       desc: "BMW is settled in Munich and produces motor vehicles in Germany, Brazil, China, India, Mexico, the Netherlands, South Africa, the United Kingdom, and the United States. Speed dealership with BMW established in Lucknow and Kanpur.",
-      contact: "+996 (4343) 4325665",
+      contact: "8090494000",
       mapLink: "https://maps.app.goo.gl/XyncBecGJaFcVTm96",
     },
     {
@@ -76,7 +76,7 @@ export const content = {
       logoImg: BrandIsuzuLogo,
       imagesShowroom: [BrandIsuzuShowroomImg1, BrandIsuzuShowroomImg2],
       desc: "Isuzu Motors Ltd., usually known as Isuzu, is a Japanese business vehicle and diesel motor assembling organization settled in Tokyo. Speed dealership with Isuzu established in Lucknow. And, in Kanpur the dealership was established in 2017.",
-      contact: "+996 (4343) 4325665",
+      contact: "7703020817",
       mapLink: "https://maps.app.goo.gl/BMdwPonEbdoXrHXn7",
     },
     {
@@ -84,7 +84,7 @@ export const content = {
       logoImg: BrandVolvoLogo,
       imagesShowroom: [BrandVolvoShowroomImg1, BrandVolvoShowroomImg2],
       desc: "Automobile manufacturer Volvo Cars have now turned into a well-known brand. Volvo handles the appropriation and offer of trucks, transports, and construction equipment. Speed dealership with Volvo Cars has also been established in Lucknow in 2017.",
-      contact: "+996 (4343) 4325665",
+      contact: "7565000570",
       mapLink: "https://maps.app.goo.gl/sVky8G6VzUc36pMMA",
     },
     {
@@ -92,7 +92,7 @@ export const content = {
       logoImg: BrandMotorradLogo,
       imagesShowroom: [BrandMotorradShowroomImg1, BrandMotorradShowroomImg2],
       desc: "BMW Motorrad is the bike brand of BMW, part of its Corporate and Brand Development division. It has delivered bikes starting around 1923. Speed dealership with BMW Motorrad was established in 2019.",
-      contact: "+996 (4343) 4325665",
+      contact: "7565000649",
       mapLink: "https://maps.app.goo.gl/eJLDq2ZFhiaQJZkS9",
     },
     {
@@ -108,16 +108,16 @@ export const content = {
       logoImg: BrandJuiceLogo,
       imagesShowroom: [BrandJuiceShowroomImg1, BrandJuiceShowroomImg2],
       desc: "Juice, one of India's trendiest salon chains has more than 30 salons across India and Dubai catering to the beauty needs of ardent fashion followers, trendsetters, and celebrities.",
-      contact: "+996 (4343) 4325665",
-      mapLink: "https://maps.app.goo.gl/R5GF9eigACUdiJ2X6",
+      contact: "8090140005",
+      mapLink: "https://maps.app.goo.gl/5yoLrynxMGx9L2ju5",
     },
     {
       brandName: "Byd",
       logoImg: BrandBydLogo,
       imagesShowroom: [BrandBydShowroomImg1, BrandBydShowroomImg2],
       desc: "Coming Soon",
-      contact: "+996 (4343) 4325665",
-      mapLink: "https://maps.app.goo.gl/oLWSZLCK2sPVqUd96",
+      contact: "77030102505",
+      mapLink: "https://maps.app.goo.gl/RgsLabEfn155tG7j8",
     },
   ],
   testimonialsContent: [

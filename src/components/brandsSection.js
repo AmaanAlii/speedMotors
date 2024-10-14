@@ -40,7 +40,7 @@ function BrandsSection() {
   };
 
   const brandLogos = [
-    BrandLogoImg1,
+    // BrandLogoImg1,
     BrandLogoImg2,
     BrandLogoImg3,
     BrandLogoImg4,
@@ -52,7 +52,7 @@ function BrandsSection() {
   ];
 
   const BrandExampleImgs = [
-    BrandExampleImg1,
+    // BrandExampleImg1,
     BrandExampleImg2,
     BrandExampleImg3,
     BrandExampleImg4,
