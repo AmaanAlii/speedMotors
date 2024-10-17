@@ -7,11 +7,12 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import FooterSection from "./components/footerSection";
 import { useRef } from "react";
+import GoToTop from "./components/goToTop";
 
 function App() {
   const galleryRef = useRef(null);
   return (
-    <div className="App">
+    <div className="App relative">
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -34,6 +35,7 @@ function App() {
             element={<Home galleryRef={galleryRef} />}
           />
         </Routes>
+        <GoToTop />
         <FooterSection />
       </Router>
     </div>
