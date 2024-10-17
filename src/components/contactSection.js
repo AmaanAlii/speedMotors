@@ -6,6 +6,21 @@ import { IoLocation } from "react-icons/io5";
 import { content } from "../websiteContent/content";
 import ContactForm from "./contactForm";
 function ContactSection() {
+  const handleEmail = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
+  const handleCall = () => {
+    window.location.href = `tel:${content.companyDetails.companyPhone}`;
+  };
+
+  const handleMapClick = () => {
+    window.open(
+      content.companyDetails.companyMapLink,
+      "_blank",
+      "noopener noreferrer"
+    );
+  };
   return (
     <div className=" w-[90%] h-auto mt-10 flex flex-col justify-center items-center gap-10 text-left">
       <h3 className=" text-4xl text-gray-700 font-bold">
@@ -32,21 +47,29 @@ function ContactSection() {
               Say something to start a live chat!
             </span>
           </div>
-          <div className=" flex justify-center items-center gap-2 text-left">
+          <div
+            onClick={handleCall}
+            className=" underline md:hover:underline md:no-underline cursor-pointer flex justify-center items-center gap-2 text-left"
+          >
             <IoCallSharp />
             {content.companyDetails.companyPhone}
           </div>
           <div className=" flex justify-center items-center gap-2 text-left">
             <IoMail />
-            <div className=" flex flex-col justify-start items-start">
+            <div className=" underline md:hover:underline md:no-underline cursor-pointer flex flex-col justify-start items-start">
               {content.companyDetails.companyEmails.map((email, index) => (
-                <span key={index}>{email}</span>
+                <span onClick={() => handleEmail(email)} key={index}>
+                  {email}
+                </span>
               ))}
             </div>
           </div>
-          <div className=" flex justify-center items-center gap-2 text-left">
+          <div
+            onClick={handleMapClick}
+            className="  underline md:hover:underline md:no-underline cursor-pointer flex justify-center items-center gap-2 text-left"
+          >
             <IoLocation />
-            {content.companyDetails.companyPhone}
+            {content.companyDetails.companyAddress}
           </div>
         </div>
         <div className=" w-[95%] md:w-[40%]">

@@ -7,6 +7,7 @@ import BrandLogoImg5 from "../assets/brands/BrandLogo5.png";
 import BrandLogoImg6 from "../assets/brands/BrandLogo6.png";
 import BrandLogoImg7 from "../assets/brands/BrandLogo7.png";
 import BrandLogoImg8 from "../assets/brands/BrandLogo8.png";
+import BrandLogoImg9 from "../assets/brands/BrandLogo9.png";
 
 import HomeBannerBgImg from "../assets/home/HomeBannerBgImg.png";
 import {
@@ -25,6 +26,7 @@ function HomeBanner() {
     BrandLogoImg6,
     BrandLogoImg7,
     BrandLogoImg8,
+    BrandLogoImg9,
   ];
 
   const homeBannerRef = useRef();

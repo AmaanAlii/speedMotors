@@ -47,7 +47,7 @@ export const content = {
       subText: "HAPPY CUSTOMERS",
     },
     {
-      heading: 202,
+      heading: 200,
       subText: "HONORS AND AWARDS",
     },
   ],
@@ -145,6 +145,7 @@ export const content = {
     companyEmails: ["hr@bmw-speedmotors.in", "info@speedmotors.in"],
     companyAddress:
       "3, Shahnajaf Rd, Hazratganj, Lucknow, Uttar Pradesh 226001",
+    companyMapLink: "https://maps.app.goo.gl/EvUyt7vWegfTTzCW9",
   },
   timeLineContent: [
     {
