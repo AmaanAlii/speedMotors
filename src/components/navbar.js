@@ -80,13 +80,16 @@ function Navbar({ galleryRef }) {
   ];
 
   useEffect(() => {
-    const body = document.querySelector("body");
     if (sideMenuOpen) {
-      body.style.overflow = "hidden";
-      body.addEventListener("click", handleOutsideClick);
+      const windowWidth = window.innerWidth;
+      if (windowWidth > 1024) {
+        document.body.style.width = "99vw";
+      }
+      document.body.style.overflowY = "hidden";
+      document.body.addEventListener("click", handleOutsideClick);
     } else {
-      body.style.overflow = "auto";
-      body.removeEventListener("click", handleOutsideClick);
+      document.body.style.overflowY = "auto";
+      document.body.removeEventListener("click", handleOutsideClick);
     }
   }, [sideMenuOpen]);
 

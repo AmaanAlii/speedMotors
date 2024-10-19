@@ -61,9 +61,9 @@ export const homeBannerBgHover = (homeBannerRef) => {
   gsap.to(homeBannerRef.current, {
     backgroundPosition: "center 150px",
     duration: 2,
-    delay: 0.2,
+    delay: 0,
     ease: "power1.inOut",
     repeat: 0, // Keep it looping
-    yoyo: true, // Reverses animation
+    // yoyo: true, // Reverses animation
   });
 };

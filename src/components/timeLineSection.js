@@ -44,12 +44,27 @@ function TimeLineSection() {
     } else handleEventChange(currentEventId - 1);
   };
 
-  useGSAP(() => {
-    gsap.from(".timeLineDesc", {
-      x: "200px",
-      duration: 0.5,
-      ease: "power1.inOut",
-    });
+  // useGSAP(
+  //   () => {
+  //     gsap.from(".timeLineDesc", {
+  //       x: "200px",
+  //       duration: 0.5,
+  //       ease: "power1.inOut",
+  //     });
+  //   },
+  //   { scope: ".time-line-section", dependencies: [currentEventId] }
+  // );
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".timeLineDesc", {
+        x: "200px",
+        duration: 0.5,
+        ease: "power1.inOut",
+      });
+    }, ".time-line-section");
+
+    return () => ctx.revert();
   }, [currentEventId]);
 
   useEffect(() => {
@@ -61,7 +76,7 @@ function TimeLineSection() {
   }, [currentEventId, timeLineData]);
 
   return (
-    <section className=" text-left w-[90%] flex flex-col justify-start items-start gap-5 overflow-x-hidden">
+    <section className=" time-line-section text-left w-[90%] flex flex-col justify-start items-start gap-5 overflow-x-hidden">
       <div className=" flex flex-col justify-start items-start gap-5">
         <h3 className=" text-4xl text-gray-700 font-bold">
           Time<span className=" text-[#009ADA]">Line</span>

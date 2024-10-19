@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Modal } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper and SwiperSlide
 import "swiper/css"; // Import Swiper styles
@@ -16,22 +16,66 @@ import GalleryImg5 from "../assets/home/GalleryImg5.png";
 import GalleryImg6 from "../assets/home/GalleryImg6.png";
 import GalleryImg7 from "../assets/home/GalleryImg7.png";
 import GalleryImg8 from "../assets/home/GalleryImg8.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP);
 
 const GallerySection = ({ galleryRef }) => {
-  const galleryImages = [
-    GalleryImg1,
-    GalleryImg2,
-    GalleryImg3,
-    GalleryImg4,
-    GalleryImg5,
-    GalleryImg6,
-    GalleryImg7,
-    GalleryImg8,
+  const gallerySections = [
+    {
+      id: 1,
+      name: "All",
+      images: [
+        GalleryImg1,
+        GalleryImg2,
+        GalleryImg3,
+        GalleryImg4,
+        GalleryImg5,
+        GalleryImg6,
+        GalleryImg7,
+        GalleryImg8,
+      ],
+    },
+    {
+      id: 2,
+      name: "Option",
+      images: [
+        GalleryImg1,
+        GalleryImg2,
+        GalleryImg3,
+        GalleryImg4,
+        GalleryImg5,
+        GalleryImg6,
+        GalleryImg7,
+      ],
+    },
+    {
+      id: 3,
+      name: "Option",
+      images: [
+        GalleryImg1,
+        GalleryImg2,
+        GalleryImg3,
+        GalleryImg4,
+        GalleryImg5,
+        GalleryImg6,
+      ],
+    },
+    {
+      id: 4,
+      name: "Option",
+      images: [GalleryImg1, GalleryImg2, GalleryImg3, GalleryImg4, GalleryImg5],
+    },
   ];
 
   const [open, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  const [selectedSectionId, setSelectedSectionId] = useState(1);
+
+  const galleryContainerRef = useRef(null);
 
   const handleImageClick = (index) => {
     setPhotoIndex(index);
@@ -44,29 +88,87 @@ const GallerySection = ({ galleryRef }) => {
     setOpen(false);
   };
 
+  const handleSectionClick = (id) => {
+    setSelectedSectionId(id);
+  };
+
+  // useGSAP(
+  //   () => {
+  //     gsap.from(".gallery-imgs", {
+  //       y: "100px",
+  //       opacity: 0,
+  //       duration: 1,
+  //       delay: 0.2,
+  //       ease: "power2.inOut",
+  //       stagger: 0.2,
+  //     });
+  //   },
+
+  //   { scope: ".gallery-container", dependencies: [selectedSectionId] }
+  // );
+
+  // useEffect to handle GSAP animations
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".gallery-imgs", {
+        y: "100px",
+        opacity: 0,
+        duration: 0.8,
+        // delay: 0.2,
+        ease: "power2.inOut",
+        stagger: 0.2,
+      });
+    }, galleryContainerRef);
+
+    // Cleanup the context when component unmounts or dependencies change
+    return () => ctx.revert();
+  }, [selectedSectionId]);
+
   return (
     <div
       ref={galleryRef}
       style={{ backgroundImage: `url(${GalleryBgImg})` }}
-      className="w-full flex justify-center items-center md:p-10 bg-cover bg-no-repeat bg-center"
+      className="gallery-container w-full flex justify-center items-center md:p-10 bg-cover bg-no-repeat bg-center"
     >
-      <div className="w-full md:max-w-[90%] flex flex-col justify-start items-start gap-10">
+      <div
+        ref={galleryContainerRef}
+        className="w-full md:max-w-[90%] flex flex-col justify-start items-start gap-10"
+      >
         <h3 className="text-4xl pl-10 md:pl-0 text-gray-700 font-bold">
           Gall<span className="text-[#009ADA]">ery</span>
         </h3>
-        <div className="w-[100%] hidden md:flex justify-center md:justify-start items-start gap-5 flex-wrap">
-          {galleryImages.map((img, index) => (
-            <img
-              key={index}
-              className="w-full md:w-[250px] cursor-pointer"
-              src={img}
-              alt="Gallery"
-              onClick={() => handleImageClick(index)}
-            />
-          ))}
+        <div className=" md:w-[90%] lg:w-[60%] flex justify-center items-center flex-wrap  place-self-center gap-5">
+          {" "}
+          {selectedSectionId &&
+            gallerySections?.map((section, index) => (
+              <div
+                onClick={() => handleSectionClick(section.id)}
+                className={` font-bold text-xl box-border p-1 w-[80px] rounded-lg cursor-pointer  ${
+                  selectedSectionId === section.id
+                    ? " border-2 border-sky-500 text-sky-500"
+                    : " border-none text-gray-600"
+                }`}
+                key={section.id}
+              >
+                {section.name}
+              </div>
+            ))}
+        </div>
+        <div className=" gallery-showcase w-[100%] hidden md:flex justify-center md:justify-start items-start gap-5 flex-wrap">
+          {gallerySections
+            .find((section) => section.id === selectedSectionId)
+            .images?.map((img, index) => (
+              <img
+                key={index}
+                className="gallery-imgs w-full md:w-[250px] cursor-pointer"
+                src={img}
+                alt="Gallery"
+                onClick={() => handleImageClick(index)}
+              />
+            ))}
         </div>
 
-        <div className="w-full md:hidden">
+        <div className="w-full gallery-showcase md:hidden">
           {/* Swiper for Main Image */}
           <Swiper
             loop={true}
@@ -78,15 +180,17 @@ const GallerySection = ({ galleryRef }) => {
             onSlideChange={(swiper) => setPhotoIndex(swiper.activeIndex)}
             className="w-full"
           >
-            {galleryImages.map((image, index) => (
-              <SwiperSlide key={index} style={{ width: "100%" }}>
-                <img
-                  src={image}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full object-contain"
-                />
-              </SwiperSlide>
-            ))}
+            {gallerySections
+              .find((section) => section.id === selectedSectionId)
+              .images?.map((image, index) => (
+                <SwiperSlide key={index} style={{ width: "100%" }}>
+                  <img
+                    src={image}
+                    alt={`Gallery ${index + 1}`}
+                    className="w-full object-contain"
+                  />
+                </SwiperSlide>
+              ))}
           </Swiper>
 
           {/* Thumbnail Swiper */}
@@ -133,15 +237,17 @@ const GallerySection = ({ galleryRef }) => {
               onSlideChange={(swiper) => setPhotoIndex(swiper.activeIndex)}
               className="w-full h-full"
             >
-              {galleryImages.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    alt={`Gallery ${index + 1}`}
-                    className="w-full h-[80vh] object-contain"
-                  />
-                </SwiperSlide>
-              ))}
+              {gallerySections
+                .find((section) => section.id === selectedSectionId)
+                .images?.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={image}
+                      alt={`Gallery ${index + 1}`}
+                      className="w-full h-[80vh] object-contain"
+                    />
+                  </SwiperSlide>
+                ))}
             </Swiper>
 
             {/* Thumbnail Swiper */}
