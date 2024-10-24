@@ -29,6 +29,21 @@ function HomeBanner() {
     BrandLogoImg9,
   ];
 
+  const brandLinks = [
+    "https://www.tvsmotor.com/",
+    "https://www.bmw-speedmotorwagen.in/",
+    "https://www.isuzu.in/",
+    "https://www.volvocars.com/",
+    "https://www.bmw-motorrad.in/",
+    "https://bydautoindia.com/",
+    "https://www.skoda-auto.co.in/",
+    "https://juicesalons.com/",
+  ];
+
+  const hanldeImageClick = (brandLink) => {
+    window.open(brandLink, "_blank", "noopener, noreferrer");
+  };
+
   const homeBannerRef = useRef();
 
   const { contextSafe } = useGSAP();
@@ -70,7 +85,13 @@ function HomeBanner() {
       </div>
       <div className=" w-full flex justify-between items-center flex-wrap gap-5">
         {brandLogos.map((img, index) => (
-          <img className=" max-w-[100px]" key={index} src={img} alt="Brand" />
+          <img
+            onClick={() => hanldeImageClick(brandLinks[index])}
+            className=" cursor-pointer max-w-[100px]"
+            key={index}
+            src={img}
+            alt="Brand"
+          />
         ))}
       </div>
       <button

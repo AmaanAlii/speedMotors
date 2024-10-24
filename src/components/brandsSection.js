@@ -31,12 +31,8 @@ function BrandsSection() {
     return () => clearInterval(intervalId);
   }, [intervalDuration]);
 
-  const handleImageClick = (imageIndex) => {
-    setCurrentIndex(imageIndex);
-    setIntervalDuration(5000);
-    setTimeout(() => {
-      setIntervalDuration(3000);
-    }, 5000);
+  const handleImageClick = (brandLink) => {
+    window.open(brandLink, "_blank", "noopener, noreferrer");
   };
 
   const brandLogos = [
@@ -49,6 +45,17 @@ function BrandsSection() {
     BrandLogoImg7,
     BrandLogoImg8,
     BrandLogoImg9,
+  ];
+
+  const brandLinks = [
+    "https://www.tvsmotor.com/",
+    "https://www.bmw-speedmotorwagen.in/",
+    "https://www.isuzu.in/",
+    "https://www.volvocars.com/",
+    "https://www.bmw-motorrad.in/",
+    "https://bydautoindia.com/",
+    "https://www.skoda-auto.co.in/",
+    "https://juicesalons.com/",
   ];
 
   const BrandExampleImgs = [
@@ -73,7 +80,7 @@ function BrandsSection() {
         {brandLogos.map((img, index) => (
           <div className=" h-[100px] w-[80px]  flex justify-center items-center">
             <img
-              onClick={() => handleImageClick(index)}
+              onClick={() => handleImageClick(brandLinks[index])}
               className={` max-w-[100px] box-border cursor-pointer ${
                 index === currentIndex
                   ? " border-2 border-gray-600 p-2 rounded-lg"

@@ -28,6 +28,22 @@ function Navbar({ galleryRef }) {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [firstRender, setFirstRender] = useState(false);
 
+  const [isShadow, setIsShadow] = useState(false);
+
+  const setShadow = () => {
+    if (window.scrollY > 100) {
+      setIsShadow(true);
+    } else {
+      setIsShadow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", setShadow);
+
+    return () => window.removeEventListener("scroll", setShadow);
+  }, []);
+
   const navRef = useRef();
   const burgerIconRef = useRef();
   const closeIconRef = useRef();
@@ -106,7 +122,9 @@ function Navbar({ galleryRef }) {
   return (
     <nav
       ref={navRef}
-      className=" side-menu fixed bg-white top-0 z-20 w-full h-[60px] shadow-md px-10 flex justify-between items-center"
+      className={`side-menu fixed bg-white top-0 z-20 w-full h-[60px] ${
+        isShadow ? "shadow-md" : ""
+      } px-10 flex justify-between items-center`}
     >
       <img className=" w-[120px]" src={MainLogoImg} alt="Logo" />
       <div className=" flex justify-center items-center gap-5">

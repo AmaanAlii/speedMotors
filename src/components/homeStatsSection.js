@@ -17,7 +17,7 @@ function HomeStatsSection() {
     <>
       <div
         style={{ backgroundImage: `url(${HomeStatsBgImg})` }}
-        className=" bg-cover bg-no-repeat bg-center 
+        className=" bg-fixed bg-cover bg-no-repeat bg-center 
       w-full h-auto md:min-h-[30vh] hidden md:flex justify-center items-center flex-wrap gap-10
        px-5 py-10 "
       >
