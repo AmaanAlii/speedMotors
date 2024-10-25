@@ -146,6 +146,11 @@ export const content = {
     companyAddress:
       "3, Shahnajaf Rd, Hazratganj, Lucknow, Uttar Pradesh 226001",
     companyMapLink: "https://maps.app.goo.gl/EvUyt7vWegfTTzCW9",
+    companyFb:
+      "https://www.facebook.com/share/Tnwvinw7N8QG1o42/?mibextid=LQQJ4d",
+    companyInsta:
+      "https://www.instagram.com/speed_lucknow?igsh=eTd1M3cwdmxmd2hy",
+    companyLinkedIn: "https://www.linkedin.com/company/speedmotors/",
   },
   timeLineContent: [
     {

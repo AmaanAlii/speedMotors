@@ -24,12 +24,16 @@ function OurDirectorsSection() {
               absolute w-full h-full cursor-pointer 
                 justify-center items-center rounded-lg "
             >
-              <div className=" w-full h-full bg-sky-300 mix-blend-multiply"></div>
+              <div className=" w-full h-full bg-sky-300 mix-blend-multiply rounded-lg"></div>
               <span className=" absolute font-bold text-3xl text-white">
                 {director?.name}
               </span>
             </div>
-            <img className=" w-[280px]" src={director?.img} alt="Director" />
+            <img
+              className=" w-[280px] rounded-lg"
+              src={director?.img}
+              alt="Director"
+            />
           </div>
         ))}
       </div>

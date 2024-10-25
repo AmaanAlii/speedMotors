@@ -32,11 +32,11 @@ function HomeBanner() {
   const brandLinks = [
     "https://www.tvsmotor.com/",
     "https://www.bmw-speedmotorwagen.in/",
-    "https://www.isuzu.in/",
-    "https://www.volvocars.com/",
+    "https://link.mark1.ai/widget/booking/q7CJffKA0BSDT9v8Y1WY",
+    "http://speedvolvo.com/",
     "https://www.bmw-motorrad.in/",
-    "https://bydautoindia.com/",
-    "https://www.skoda-auto.co.in/",
+    "https://speedbyd.in/",
+    "https://dealers.skoda-auto.co.in/speedworks-skoda-showroom-speedworks-auto-private-limited-car-dealer-transport-nagar-lucknow-243594/Home",
     "https://juicesalons.com/",
   ];
 

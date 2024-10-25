@@ -2,6 +2,9 @@ import ContactSectionLeftBgImg from "../assets/home/ContectSectionRightBgImg.png
 import { IoCallSharp } from "react-icons/io5";
 import { IoMail } from "react-icons/io5";
 import { IoLocation } from "react-icons/io5";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 
 import { content } from "../websiteContent/content";
 import ContactForm from "./contactForm";
@@ -20,6 +23,10 @@ function ContactSection() {
       "_blank",
       "noopener noreferrer"
     );
+  };
+
+  const handleSocialMediaClick = (link) => {
+    window.open(link, "_blank", "noopener, noreferrer");
   };
   return (
     <div className=" w-[90%] h-auto mt-10 flex flex-col justify-center items-center gap-10 text-left">
@@ -70,6 +77,26 @@ function ContactSection() {
           >
             <IoLocation />
             {content.companyDetails.companyAddress}
+          </div>
+          <div className=" flex justify-center items-center gap-5 text-left text-3xl">
+            <FaFacebookSquare
+              className=" cursor-pointer hover:text-sky-500 "
+              onClick={() =>
+                handleSocialMediaClick(content?.companyDetails?.companyFb)
+              }
+            />
+            <FaSquareInstagram
+              className=" cursor-pointer hover:text-sky-500"
+              onClick={() =>
+                handleSocialMediaClick(content?.companyDetails?.companyInsta)
+              }
+            />
+            <FaLinkedin
+              className=" cursor-pointer hover:text-sky-500"
+              onClick={() =>
+                handleSocialMediaClick(content?.companyDetails?.companyLinkedIn)
+              }
+            />
           </div>
         </div>
         <div className=" w-[95%] md:w-[40%]">
